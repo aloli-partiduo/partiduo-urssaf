@@ -14,7 +14,7 @@
 Partiduo::Modules.register do
   code "URSSAF"
   name "urssaf.module.name"
-  version "0.2.0"
+  version Urssaf::VERSION
   requires_core "~> 0.1"
   depends_on "MICRO"
 
