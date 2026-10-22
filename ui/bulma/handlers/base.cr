@@ -22,7 +22,7 @@ module Urssaf
 
       def starts_on : Time?
         Time.parse_utc(field("starts_on"), "%Y-%m-%d")
-      rescue Time::Format::Error
+      rescue Time::Format::Error | ArgumentError
         nil
       end
 

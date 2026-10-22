@@ -86,7 +86,7 @@ module Urssaf
       def post
         signed_on = begin
           Time.parse_utc(field("signed_on"), "%Y-%m-%d")
-        rescue Time::Format::Error
+        rescue Time::Format::Error | ArgumentError
           Partiduo::Api::Core.today
         end
         done(Api.sign_mandate(current.actor, Api::MandateInput.new(signed_on, field("accepted") == "1")),

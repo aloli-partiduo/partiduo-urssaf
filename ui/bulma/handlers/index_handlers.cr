@@ -142,7 +142,7 @@ module Urssaf
       def get
         day = begin
           Time.parse_utc(query("starts_on"), "%Y-%m-%d")
-        rescue Time::Format::Error
+        rescue Time::Format::Error | ArgumentError
           nil
         end
         return back_to_year(nil) unless day
@@ -175,7 +175,7 @@ module Urssaf
       def post
         signed_on = begin
           Time.parse_utc(field("signed_on"), "%Y-%m-%d")
-        rescue Time::Format::Error
+        rescue Time::Format::Error | ArgumentError
           Partiduo::Api::Core.today
         end
         input = Api::SepaMandateInput.new(iban: field("iban"), bic: field("bic"), holder: field("holder"),
