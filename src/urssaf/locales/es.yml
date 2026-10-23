@@ -1,0 +1,131 @@
+es:
+  urssaf:
+    module:
+      name: "URSSAF (tierce déclaration de microempresario)"
+    permissions:
+      declaration:
+        read: "Ver las declaraciones URSSAF en línea y las cotizaciones adeudadas"
+        transmit: "Estimar y declarar el volumen de negocio a la URSSAF"
+      settings:
+        manage: "Configurar la URSSAF (credenciales de la API, mandato)"
+      payment:
+        transmit: "Pagar las cotizaciones URSSAF por adeudo SEPA y gestionar los mandatos SEPA"
+    menu:
+      declarations: "Declaración URSSAF en línea"
+      settings: "URSSAF en línea"
+    statuses:
+      accepted: "Aceptada"
+      rejected: "Rechazada"
+    mandate_statuses:
+      none: "Ningún mandato"
+      signed: "Recabado, pendiente de notificar"
+      notified: "Notificado a la URSSAF"
+      revoked: "Revocado"
+    environments:
+      sandbox: "Entorno de pruebas"
+      production: "Producción"
+    periodicities:
+      monthly: "Mensual"
+      quarterly: "Trimestral"
+    actions:
+      signed: "Mandato recabado"
+      notified: "Mandato notificado"
+      revoked: "Mandato revocado"
+      eligibility: "Elegibilidad consultada"
+      estimated: "Estimación"
+      declared: "Declaración aceptada"
+      rejected: "Declaración rechazada"
+      error: "Error"
+      paid: "Pago telemático iniciado"
+      payment_done: "Pago efectuado"
+      payment_rejected: "Pago rechazado"
+      sepa_registered: "Mandato SEPA registrado"
+      sepa_revoked: "Mandato SEPA revocado"
+      refreshed: "Seguimiento consultado en la URSSAF"
+      anomaly: "Anomalía"
+      resolved: "Anomalía resuelta"
+      remote_revoked: "Mandato revocado desde el espacio URSSAF"
+    payment_statuses:
+      initiated: "Iniciado"
+      done: "Efectuado"
+      rejected: "Rechazado"
+    sepa_statuses:
+      active: "Activo"
+      revoked: "Revocado"
+    anomalies:
+      rejected: "Declaración rechazada"
+      urssaf: "Anomalía señalada por la URSSAF"
+      contributions_changed: "Cotizaciones modificadas por la URSSAF"
+      payment_rejected: "Pago rechazado"
+      mandate_revoked: "Mandato revocado desde el espacio URSSAF"
+      paid_elsewhere: "Cotizaciones pagadas fuera de Partiduo"
+      payment_unknown: "Pago sin número de la URSSAF"
+      not_marked: "Declaración transmitida, no anotada en la microempresa"
+      turnover_changed: "Declaración por corregir: volumen de negocio del registro modificado"
+    anomaly_details:
+      contributions_changed: "%{before} en el acuse, %{after} según la URSSAF"
+      paid_elsewhere: "%{urssaf} pagados según la URSSAF, %{partiduo} por Partiduo: compruébelo antes de pagar"
+      payment_unknown: "Orden %{reference} de %{amount} sin número de la URSSAF: compruébela en el espacio URSSAF"
+      not_marked: "Periodo del %{from} al %{to}: anótelo como declarado en la pantalla URSSAF de la microempresa"
+      turnover_changed: "Periodo del %{from} al %{to}: %{declared} € declarados, %{registered} € en el registro; corrija la declaración en el espacio URSSAF"
+    event_details:
+      eligibility: "Elegible: %{eligible}; periodicidad: %{periodicity}"
+      paid: "Declaración %{declaration}: %{amount}"
+      payment_done: "Pago %{payment}: %{amount}"
+      payment_rejected: "Pago %{payment}: %{reason}"
+      resolved: "%{code}"
+    receipt:
+      title: "Acuse de la declaración del volumen de negocio — URSSAF (tierce déclaration)"
+      number: "Número de la declaración: %{number}"
+      siren: "SIREN: %{siren}"
+      period: "Periodo: del %{starts_on} al %{ends_on}"
+      turnover: "Volumen de negocio declarado, %{category}: %{amount} €"
+      contribution: "Cotizaciones adeudadas, %{category}: %{amount} €"
+      total: "Total de cotizaciones adeudadas: %{amount} €"
+      due_on: "Fecha límite de pago: %{date}"
+      transmitted_at: "Transmitido el: %{at}"
+    controls:
+      already_transmitted: "Declarada en línea (n.º %{reference})."
+      already_declared: "Periodo ya anotado como declarado."
+      period_open: "El periodo no ha terminado."
+      mandate_missing: "El mandato no está notificado a la URSSAF."
+      not_eligible: "Cuenta no elegible para la tierce déclaration: %{reason}"
+      periodicity_mismatch: "Periodicidad distinta: %{urssaf} para la URSSAF, %{micro} en los ajustes de la microempresa."
+      missing_rates: "Tipos ausentes en Partiduo (%{rates}): la URSSAF calcula ella misma las cotizaciones."
+      negative_turnover: "Volumen de negocio negativo (%{categories}): la URSSAF solo acepta importes positivos o nulos; revise las facturas de abono del periodo."
+      no_transport: "Conexión con la URSSAF aún no habilitada: declare en el sitio web de la URSSAF y anote después la declaración en la pantalla URSSAF."
+      no_credentials: "Guarde las credenciales de la API en los ajustes de URSSAF en línea."
+      not_marked: "Declarada en línea pero no anotada en la microempresa: sus líneas siguen siendo modificables, anote la declaración."
+      turnover_changed: "Declaración por corregir: %{declared} € declarados, %{registered} € en el registro. Corríjala en el espacio URSSAF."
+    errors:
+      anomaly: "Anomalía desconocida o ya resuelta."
+      payment:
+        not_declared: "Ninguna declaración aceptada para este periodo."
+        nothing_due: "No queda nada por pagar en este periodo."
+        no_sepa: "Registre primero un mandato de adeudo SEPA."
+      sepa:
+        iban: "IBAN no válido."
+        bic: "BIC no válido (8 u 11 caracteres)."
+        holder: "Indique el titular de la cuenta."
+        accept: "El microempresario debe autorizar el adeudo."
+        unknown: "Mandato SEPA desconocido o ya revocado."
+      period: "Periodo de declaración desconocido."
+      credentials:
+        client_id: "Indique el identificador de la aplicación (client_id)."
+        env: "Entorno desconocido."
+        unreadable: "Secreto guardado ilegible: introdúzcalo de nuevo."
+        client_secret: "Indique el secreto de la aplicación (client_secret)."
+      mandate:
+        accept: "El microempresario debe aceptar los términos del mandato."
+        future: "La fecha de firma no puede ser posterior a la fecha de hoy."
+        active: "Ya hay un mandato notificado: revóquelo primero."
+        siren: "Indique el SIREN de la empresa en los datos de la empresa antes de recabar el mandato."
+        not_signed: "Recabe primero el mandato."
+        none: "Ningún mandato que revocar."
+      transport:
+        credentials: "La URSSAF rechaza las credenciales de la aplicación."
+        unavailable: "La URSSAF no responde; vuelva a intentarlo más tarde."
+        rejected: "La URSSAF rechaza la declaración: %{reason}"
+        mandate_unknown: "La URSSAF no conoce este mandato."
+        account_unknown: "La URSSAF no conoce ninguna cuenta de microempresario para este SIREN."
+        sepa_refused: "La URSSAF rechaza el mandato SEPA: %{reason}"

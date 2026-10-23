@@ -1,0 +1,131 @@
+de:
+  urssaf:
+    module:
+      name: "URSSAF (tierce déclaration für Kleinstunternehmer)"
+    permissions:
+      declaration:
+        read: "URSSAF-Online-Erklärungen und fällige Beiträge einsehen"
+        transmit: "Umsatz schätzen und bei der URSSAF erklären"
+      settings:
+        manage: "URSSAF einrichten (API-Zugangsdaten, Mandat)"
+      payment:
+        transmit: "URSSAF-Beiträge per SEPA-Lastschrift zahlen und SEPA-Mandate verwalten"
+    menu:
+      declarations: "URSSAF-Online-Erklärung"
+      settings: "URSSAF online"
+    statuses:
+      accepted: "Angenommen"
+      rejected: "Zurückgewiesen"
+    mandate_statuses:
+      none: "Kein Mandat"
+      signed: "Eingeholt, zu melden"
+      notified: "Der URSSAF gemeldet"
+      revoked: "Widerrufen"
+    environments:
+      sandbox: "Sandbox"
+      production: "Produktion"
+    periodicities:
+      monthly: "Monatlich"
+      quarterly: "Vierteljährlich"
+    actions:
+      signed: "Mandat eingeholt"
+      notified: "Mandat gemeldet"
+      revoked: "Mandat widerrufen"
+      eligibility: "Berechtigung abgefragt"
+      estimated: "Schätzung"
+      declared: "Erklärung angenommen"
+      rejected: "Erklärung zurückgewiesen"
+      error: "Fehler"
+      paid: "Online-Zahlung eingeleitet"
+      payment_done: "Zahlung ausgeführt"
+      payment_rejected: "Zahlung zurückgewiesen"
+      sepa_registered: "SEPA-Mandat gespeichert"
+      sepa_revoked: "SEPA-Mandat widerrufen"
+      refreshed: "Stand bei der URSSAF abgefragt"
+      anomaly: "Unstimmigkeit"
+      resolved: "Unstimmigkeit erledigt"
+      remote_revoked: "Mandat im URSSAF-Konto widerrufen"
+    payment_statuses:
+      initiated: "Eingeleitet"
+      done: "Ausgeführt"
+      rejected: "Zurückgewiesen"
+    sepa_statuses:
+      active: "Aktiv"
+      revoked: "Widerrufen"
+    anomalies:
+      rejected: "Erklärung zurückgewiesen"
+      urssaf: "Von der URSSAF gemeldete Unstimmigkeit"
+      contributions_changed: "Beiträge von der URSSAF geändert"
+      payment_rejected: "Zahlung zurückgewiesen"
+      mandate_revoked: "Mandat im URSSAF-Konto widerrufen"
+      paid_elsewhere: "Beiträge außerhalb von Partiduo gezahlt"
+      payment_unknown: "Zahlung ohne URSSAF-Nummer"
+      not_marked: "Erklärung übermittelt, im Kleinstunternehmen nicht vermerkt"
+      turnover_changed: "Erklärung zu berichtigen: Umsatz im Register geändert"
+    anomaly_details:
+      contributions_changed: "%{before} laut Bestätigung, %{after} laut URSSAF"
+      paid_elsewhere: "%{urssaf} laut URSSAF gezahlt, %{partiduo} über Partiduo: Prüfen Sie dies vor der Zahlung"
+      payment_unknown: "Auftrag %{reference} über %{amount} ohne URSSAF-Nummer: Prüfen Sie ihn im URSSAF-Konto"
+      not_marked: "Zeitraum vom %{from} bis %{to}: Vermerken Sie ihn im URSSAF-Bildschirm des Kleinstunternehmens als erklärt"
+      turnover_changed: "Zeitraum vom %{from} bis %{to}: %{declared} € erklärt, %{registered} € im Register; berichtigen Sie die Erklärung im URSSAF-Konto"
+    event_details:
+      eligibility: "Berechtigt: %{eligible}; Periodizität: %{periodicity}"
+      paid: "Erklärung %{declaration}: %{amount}"
+      payment_done: "Zahlung %{payment}: %{amount}"
+      payment_rejected: "Zahlung %{payment}: %{reason}"
+      resolved: "%{code}"
+    receipt:
+      title: "Bestätigung der Umsatzerklärung — URSSAF (tierce déclaration)"
+      number: "Nummer der Erklärung: %{number}"
+      siren: "SIREN: %{siren}"
+      period: "Zeitraum: vom %{starts_on} bis %{ends_on}"
+      turnover: "Erklärter Umsatz, %{category}: %{amount} €"
+      contribution: "Fällige Beiträge, %{category}: %{amount} €"
+      total: "Summe der fälligen Beiträge: %{amount} €"
+      due_on: "Zahlungsfrist: %{date}"
+      transmitted_at: "Übermittelt am: %{at}"
+    controls:
+      already_transmitted: "Online erklärt (Nr. %{reference})."
+      already_declared: "Zeitraum bereits als erklärt vermerkt."
+      period_open: "Der Zeitraum ist noch nicht abgelaufen."
+      mandate_missing: "Das Mandat ist der URSSAF nicht gemeldet."
+      not_eligible: "Konto nicht für die tierce déclaration berechtigt: %{reason}"
+      periodicity_mismatch: "Abweichende Periodizität: %{urssaf} bei der URSSAF, %{micro} in den Einstellungen des Kleinstunternehmens."
+      missing_rates: "In Partiduo fehlende Sätze (%{rates}): Die URSSAF berechnet die Beiträge selbst."
+      negative_turnover: "Negativer Umsatz (%{categories}): Die URSSAF akzeptiert nur positive Beträge oder null; prüfen Sie die Gutschriften des Zeitraums."
+      no_transport: "Verbindung zur URSSAF noch nicht eingerichtet: Erklären Sie auf der Website der URSSAF und vermerken Sie die Erklärung dann im URSSAF-Bildschirm."
+      no_credentials: "Speichern Sie die API-Zugangsdaten in den Einstellungen von URSSAF online."
+      not_marked: "Online erklärt, aber im Kleinstunternehmen nicht vermerkt: Seine Zeilen bleiben änderbar, vermerken Sie die Erklärung."
+      turnover_changed: "Erklärung zu berichtigen: %{declared} € erklärt, %{registered} € im Register. Berichtigen Sie sie im URSSAF-Konto."
+    errors:
+      anomaly: "Unbekannte oder bereits erledigte Unstimmigkeit."
+      payment:
+        not_declared: "Keine angenommene Erklärung für diesen Zeitraum."
+        nothing_due: "Für diesen Zeitraum ist nichts mehr zu zahlen."
+        no_sepa: "Speichern Sie zuerst ein SEPA-Lastschriftmandat."
+      sepa:
+        iban: "Ungültige IBAN."
+        bic: "Ungültige BIC (8 oder 11 Zeichen)."
+        holder: "Geben Sie den Kontoinhaber an."
+        accept: "Der Kleinstunternehmer muss die Lastschrift genehmigen."
+        unknown: "SEPA-Mandat unbekannt oder bereits widerrufen."
+      period: "Unbekannter Erklärungszeitraum."
+      credentials:
+        client_id: "Geben Sie die Kennung der Anwendung an (client_id)."
+        env: "Unbekannte Umgebung."
+        unreadable: "Gespeichertes Geheimnis unlesbar: Geben Sie es erneut ein."
+        client_secret: "Geben Sie das Geheimnis der Anwendung an (client_secret)."
+      mandate:
+        accept: "Der Kleinstunternehmer muss die Bedingungen des Mandats annehmen."
+        future: "Das Unterschriftsdatum darf nicht nach dem heutigen Datum liegen."
+        active: "Es ist bereits ein Mandat gemeldet: Widerrufen Sie es zuerst."
+        siren: "Geben Sie die SIREN des Unternehmens in den Unternehmensdaten an, bevor Sie das Mandat einholen."
+        not_signed: "Holen Sie zuerst das Mandat ein."
+        none: "Kein Mandat zu widerrufen."
+      transport:
+        credentials: "Die URSSAF lehnt die Zugangsdaten der Anwendung ab."
+        unavailable: "Die URSSAF antwortet nicht; versuchen Sie es später erneut."
+        rejected: "Die URSSAF weist die Erklärung zurück: %{reason}"
+        mandate_unknown: "Die URSSAF kennt dieses Mandat nicht."
+        account_unknown: "Die URSSAF kennt kein Kleinstunternehmer-Konto für diese SIREN."
+        sepa_refused: "Die URSSAF lehnt das SEPA-Mandat ab: %{reason}"

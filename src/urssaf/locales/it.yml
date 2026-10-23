@@ -1,0 +1,131 @@
+it:
+  urssaf:
+    module:
+      name: "URSSAF (tierce déclaration del microimprenditore)"
+    permissions:
+      declaration:
+        read: "Vedere le dichiarazioni URSSAF online e i contributi dovuti"
+        transmit: "Stimare e dichiarare il fatturato all'URSSAF"
+      settings:
+        manage: "Configurare l'URSSAF (credenziali dell'API, mandato)"
+      payment:
+        transmit: "Pagare i contributi URSSAF con addebito diretto SEPA e gestire i mandati SEPA"
+    menu:
+      declarations: "Dichiarazione URSSAF online"
+      settings: "URSSAF online"
+    statuses:
+      accepted: "Accettata"
+      rejected: "Respinta"
+    mandate_statuses:
+      none: "Nessun mandato"
+      signed: "Raccolto, da notificare"
+      notified: "Notificato all'URSSAF"
+      revoked: "Revocato"
+    environments:
+      sandbox: "Ambiente di prova"
+      production: "Produzione"
+    periodicities:
+      monthly: "Mensile"
+      quarterly: "Trimestrale"
+    actions:
+      signed: "Mandato raccolto"
+      notified: "Mandato notificato"
+      revoked: "Mandato revocato"
+      eligibility: "Idoneità rilevata"
+      estimated: "Stima"
+      declared: "Dichiarazione accettata"
+      rejected: "Dichiarazione respinta"
+      error: "Errore"
+      paid: "Pagamento telematico avviato"
+      payment_done: "Pagamento effettuato"
+      payment_rejected: "Pagamento respinto"
+      sepa_registered: "Mandato SEPA registrato"
+      sepa_revoked: "Mandato SEPA revocato"
+      refreshed: "Stato rilevato presso l'URSSAF"
+      anomaly: "Anomalia"
+      resolved: "Anomalia risolta"
+      remote_revoked: "Mandato revocato dallo spazio URSSAF"
+    payment_statuses:
+      initiated: "Avviato"
+      done: "Effettuato"
+      rejected: "Respinto"
+    sepa_statuses:
+      active: "Attivo"
+      revoked: "Revocato"
+    anomalies:
+      rejected: "Dichiarazione respinta"
+      urssaf: "Anomalia segnalata dall'URSSAF"
+      contributions_changed: "Contributi modificati dall'URSSAF"
+      payment_rejected: "Pagamento respinto"
+      mandate_revoked: "Mandato revocato dallo spazio URSSAF"
+      paid_elsewhere: "Contributi pagati al di fuori di Partiduo"
+      payment_unknown: "Pagamento senza numero dell'URSSAF"
+      not_marked: "Dichiarazione trasmessa, non annotata nella microimpresa"
+      turnover_changed: "Dichiarazione da correggere: fatturato del registro modificato"
+    anomaly_details:
+      contributions_changed: "%{before} nella ricevuta, %{after} secondo l'URSSAF"
+      paid_elsewhere: "%{urssaf} pagati secondo l'URSSAF, %{partiduo} tramite Partiduo: verifichi prima di pagare"
+      payment_unknown: "Ordine %{reference} di %{amount} senza numero dell'URSSAF: lo verifichi nello spazio URSSAF"
+      not_marked: "Periodo dal %{from} al %{to}: lo annoti come dichiarato nella schermata URSSAF della microimpresa"
+      turnover_changed: "Periodo dal %{from} al %{to}: %{declared} € dichiarati, %{registered} € nel registro; corregga la dichiarazione nello spazio URSSAF"
+    event_details:
+      eligibility: "Idoneo: %{eligible}; periodicità: %{periodicity}"
+      paid: "Dichiarazione %{declaration}: %{amount}"
+      payment_done: "Pagamento %{payment}: %{amount}"
+      payment_rejected: "Pagamento %{payment}: %{reason}"
+      resolved: "%{code}"
+    receipt:
+      title: "Ricevuta della dichiarazione del fatturato — URSSAF (tierce déclaration)"
+      number: "Numero della dichiarazione: %{number}"
+      siren: "SIREN: %{siren}"
+      period: "Periodo: dal %{starts_on} al %{ends_on}"
+      turnover: "Fatturato dichiarato, %{category}: %{amount} €"
+      contribution: "Contributi dovuti, %{category}: %{amount} €"
+      total: "Totale dei contributi dovuti: %{amount} €"
+      due_on: "Termine di pagamento: %{date}"
+      transmitted_at: "Trasmesso il: %{at}"
+    controls:
+      already_transmitted: "Dichiarata online (n. %{reference})."
+      already_declared: "Periodo già annotato come dichiarato."
+      period_open: "Il periodo non è terminato."
+      mandate_missing: "Il mandato non è notificato all'URSSAF."
+      not_eligible: "Conto non idoneo alla tierce déclaration: %{reason}"
+      periodicity_mismatch: "Periodicità diversa: %{urssaf} per l'URSSAF, %{micro} nelle impostazioni della microimpresa."
+      missing_rates: "Aliquote assenti in Partiduo (%{rates}): l'URSSAF calcola da sé i contributi."
+      negative_turnover: "Fatturato negativo (%{categories}): l'URSSAF accetta solo importi positivi o nulli; verifichi le note di credito del periodo."
+      no_transport: "Collegamento all'URSSAF non ancora attivo: dichiari sul sito dell'URSSAF, poi annoti la dichiarazione nella schermata URSSAF."
+      no_credentials: "Salvi le credenziali dell'API nelle impostazioni di URSSAF online."
+      not_marked: "Dichiarata online ma non annotata nella microimpresa: le sue righe restano modificabili, annoti la dichiarazione."
+      turnover_changed: "Dichiarazione da correggere: %{declared} € dichiarati, %{registered} € nel registro. La corregga nello spazio URSSAF."
+    errors:
+      anomaly: "Anomalia sconosciuta o già risolta."
+      payment:
+        not_declared: "Nessuna dichiarazione accettata per questo periodo."
+        nothing_due: "Non resta nulla da pagare per questo periodo."
+        no_sepa: "Registri prima un mandato di addebito diretto SEPA."
+      sepa:
+        iban: "IBAN non valido."
+        bic: "BIC non valido (8 o 11 caratteri)."
+        holder: "Indichi il titolare del conto."
+        accept: "Il microimprenditore deve autorizzare l'addebito."
+        unknown: "Mandato SEPA sconosciuto o già revocato."
+      period: "Periodo di dichiarazione sconosciuto."
+      credentials:
+        client_id: "Indichi l'identificativo dell'applicazione (client_id)."
+        env: "Ambiente sconosciuto."
+        unreadable: "Segreto salvato illeggibile: lo inserisca di nuovo."
+        client_secret: "Indichi il segreto dell'applicazione (client_secret)."
+      mandate:
+        accept: "Il microimprenditore deve accettare i termini del mandato."
+        future: "La data di firma non può superare la data odierna."
+        active: "Un mandato è già notificato: lo revochi prima."
+        siren: "Indichi il SIREN dell'impresa nei dati della società prima di raccogliere il mandato."
+        not_signed: "Raccolga prima il mandato."
+        none: "Nessun mandato da revocare."
+      transport:
+        credentials: "L'URSSAF rifiuta le credenziali dell'applicazione."
+        unavailable: "L'URSSAF non risponde; riprovi più tardi."
+        rejected: "L'URSSAF respinge la dichiarazione: %{reason}"
+        mandate_unknown: "L'URSSAF non conosce questo mandato."
+        account_unknown: "L'URSSAF non conosce alcun conto di microimprenditore per questo SIREN."
+        sepa_refused: "L'URSSAF rifiuta il mandato SEPA: %{reason}"
