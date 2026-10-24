@@ -131,3 +131,14 @@ describe "URSSAF — tierce déclaration (ADR-007 D7)" do
     expect_raises(Exception, /intangible/) { Urssaf::Filing.all.first.try(&.delete) }
   end
 end
+
+describe "Extension URSSAF : exclusions (D-AMD-042 du cœur)" do
+  it "ne vaut ni dans le dossier d'un foyer ni pour un dossier belge" do
+    manifest = Partiduo::Modules["URSSAF"]
+    manifest.incompatible_with_kind.should eq(["household"])
+    Partiduo::Api::InitialData.excluded_modules("household").should contain("URSSAF")
+    manifest.regimes.should eq(["fr"])
+    manifest.admits_regime?("fr").should be_true
+    manifest.admits_regime?("be").should be_false
+  end
+end

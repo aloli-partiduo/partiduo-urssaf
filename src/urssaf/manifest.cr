@@ -11,12 +11,18 @@
 #   `urssaf.payment.transmit` (télépaiement SEPA, mandats SEPA).
 # * Menus : « Déclaration URSSAF en ligne » sous « Éditions » (à côté de
 #   l'écran URSSAF du module) et paramètres sous « Paramètres ».
+# * Exclusions (D-AMD-042 du cœur) : jamais dans le dossier d'un foyer
+#   (`incompatible_with_kind "household"`, déjà écarté par `MICRO`, exclu
+#   d'un foyer : la déclaration le dit explicitement) ; seulement au régime
+#   fiscal `fr` (`regimes "fr"`) : l'URSSAF est un organisme français.
 Partiduo::Modules.register do
   code "URSSAF"
   name "urssaf.module.name"
   version Urssaf::VERSION
   requires_core "~> 0.1"
   depends_on "MICRO"
+  incompatible_with_kind "household"
+  regimes "fr"
 
   permission "urssaf.declaration.read"
   permission "urssaf.declaration.transmit"
