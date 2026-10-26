@@ -7,7 +7,7 @@ pt:
         read: "Ver as declarações URSSAF em linha e as contribuições devidas"
         transmit: "Estimar e declarar o volume de negócios à URSSAF"
       settings:
-        manage: "Configurar a URSSAF (credenciais da API, mandato)"
+        manage: "Parametrizar a URSSAF (credenciais da API, mandato)"
       payment:
         transmit: "Pagar as contribuições URSSAF por débito direto SEPA e gerir os mandatos SEPA"
     menu:
@@ -83,18 +83,18 @@ pt:
       contribution: "Contribuições devidas, %{category}: %{amount} €"
       total: "Total das contribuições devidas: %{amount} €"
       due_on: "Data-limite de pagamento: %{date}"
-      transmitted_at: "Transmitido a: %{at}"
+      transmitted_at: "Transmitido em: %{at}"
     controls:
       already_transmitted: "Declarada em linha (n.º %{reference})."
       already_declared: "Período já registado como declarado."
       period_open: "O período não terminou."
       mandate_missing: "O mandato não está notificado à URSSAF."
       not_eligible: "Conta não elegível para a tierce déclaration: %{reason}"
-      periodicity_mismatch: "Periodicidade diferente: %{urssaf} para a URSSAF, %{micro} nas definições da microempresa."
+      periodicity_mismatch: "Periodicidade diferente: %{urssaf} para a URSSAF, %{micro} nos parâmetros da microempresa."
       missing_rates: "Taxas ausentes no Partiduo (%{rates}): a URSSAF calcula ela própria as contribuições."
       negative_turnover: "Volume de negócios negativo (%{categories}): a URSSAF só aceita montantes positivos ou nulos; verifique as notas de crédito do período."
       no_transport: "Ligação à URSSAF ainda não ativa: declare no sítio da URSSAF e depois registe a declaração no ecrã URSSAF."
-      no_credentials: "Guarde as credenciais da API nas definições da URSSAF em linha."
+      no_credentials: "Guarde as credenciais da API nos parâmetros da URSSAF em linha."
       not_marked: "Declarada em linha mas não registada na microempresa: as suas linhas continuam editáveis, registe a declaração."
       turnover_changed: "Declaração a corrigir: %{declared} € declarados, %{registered} € no registo. Corrija-a no espaço URSSAF."
     errors:
@@ -105,7 +105,7 @@ pt:
         no_sepa: "Registe primeiro um mandato de débito direto SEPA."
       sepa:
         iban: "IBAN inválido."
-        bic: "BIC inválido (8 ou 11 caracteres)."
+        bic: "BIC inválido (8 ou 11 carateres)."
         holder: "Indique o titular da conta."
         accept: "O microempresário tem de autorizar o débito."
         unknown: "Mandato SEPA desconhecido ou já revogado."

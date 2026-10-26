@@ -40,7 +40,7 @@ de:
       holder: "Kontoinhaber"
       none: "Kein SEPA-Lastschriftmandat: Speichern Sie eines, um Ihre Beiträge aus Partiduo zu zahlen, oder zahlen Sie über Ihr URSSAF-Konto."
       terms: "Mit diesem Mandat ermächtigen Sie die URSSAF, von diesem Konto die Beiträge einzuziehen, deren Zahlung Sie aus Partiduo veranlassen. Die IBAN wird an die URSSAF übermittelt und von Partiduo nicht gespeichert. Jederzeit widerrufbar, hier oder in Ihrem URSSAF-Konto."
-      accept: "Ich ermächtige die SEPA-Lastschrift"
+      accept: "Ich genehmige die SEPA-Lastschrift"
       register: "SEPA-Mandat speichern"
       revoke: "SEPA-Mandat widerrufen"
     columns:
@@ -55,7 +55,7 @@ de:
     actions:
       estimate: "Schätzen"
       declare: "Erklären"
-      declare_confirm: "Diesen Zeitraum bei der URSSAF erklären? Nach der Erklärung sind seine Zeilen nicht mehr änderbar: Ein Fehler wird durch eine Gegenbuchung berichtigt, die in der nächsten Erklärung berücksichtigt wird."
+      declare_confirm: "Diesen Zeitraum bei der URSSAF erklären? Nach der Erklärung sind seine Zeilen nicht mehr änderbar: Ein Fehler wird durch ein Storno berichtigt, das in der nächsten Erklärung berücksichtigt wird."
       refresh: "Stand abfragen"
       resolve: "Erledigt"
       pay: "%{amount} zahlen"

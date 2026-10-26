@@ -1,7 +1,7 @@
 es:
   urssaf:
     module:
-      name: "URSSAF (tierce déclaration de microempresario)"
+      name: "URSSAF (tierce déclaration, declaración por un tercero para microempresarios)"
     permissions:
       declaration:
         read: "Ver las declaraciones URSSAF en línea y las cotizaciones adeudadas"
@@ -90,11 +90,11 @@ es:
       period_open: "El periodo no ha terminado."
       mandate_missing: "El mandato no está notificado a la URSSAF."
       not_eligible: "Cuenta no elegible para la tierce déclaration: %{reason}"
-      periodicity_mismatch: "Periodicidad distinta: %{urssaf} para la URSSAF, %{micro} en los ajustes de la microempresa."
+      periodicity_mismatch: "Periodicidad distinta: %{urssaf} para la URSSAF, %{micro} en los parámetros de la microempresa."
       missing_rates: "Tipos ausentes en Partiduo (%{rates}): la URSSAF calcula ella misma las cotizaciones."
       negative_turnover: "Volumen de negocio negativo (%{categories}): la URSSAF solo acepta importes positivos o nulos; revise las facturas de abono del periodo."
       no_transport: "Conexión con la URSSAF aún no habilitada: declare en el sitio web de la URSSAF y anote después la declaración en la pantalla URSSAF."
-      no_credentials: "Guarde las credenciales de la API en los ajustes de URSSAF en línea."
+      no_credentials: "Guarde las credenciales de la API en los parámetros de URSSAF en línea."
       not_marked: "Declarada en línea pero no anotada en la microempresa: sus líneas siguen siendo modificables, anote la declaración."
       turnover_changed: "Declaración por corregir: %{declared} € declarados, %{registered} € en el registro. Corríjala en el espacio URSSAF."
     errors:

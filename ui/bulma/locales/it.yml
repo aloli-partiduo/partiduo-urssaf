@@ -9,7 +9,7 @@ it:
     how: "Partiduo dichiara il fatturato calcolato dai Suoi registri, per categoria, arrotondato all'euro, come terzo dichiarante con il Suo mandato. Lei mantiene il controllo nel Suo spazio URSSAF, dove aggiunge il fatturato di altre attività, consulta le Sue dichiarazioni e può revocare il mandato in qualsiasi momento."
     mandate_ok: "Mandato notificato: Partiduo dichiara per Lei (%{name})."
     mandate_missing: "Mandato: %{mandate}. Lo raccolga e lo notifichi per dichiarare da Partiduo."
-    transport_unavailable: "Collegamento all'URSSAF non ancora attivo: dichiari sul sito dell'URSSAF, poi annoti la dichiarazione nella schermata URSSAF dei report."
+    transport_unavailable: "Collegamento all'URSSAF non ancora attivo: dichiari sul sito dell'URSSAF, poi annoti la dichiarazione nella schermata URSSAF delle stampe."
     periods: "Periodi %{year}"
     no_period: "Nessun periodo di dichiarazione quest'anno."
     contributions_due: "Contributi dovuti: %{amount}"

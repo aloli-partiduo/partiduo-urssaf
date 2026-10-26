@@ -19,7 +19,7 @@ es:
     todo:
       one: "%{count} elemento URSSAF pendiente (declaración, pago o anomalía)"
       other: "%{count} elementos URSSAF pendientes (declaraciones, pagos o anomalías)"
-    micro_link: "Importes que trasladar y plazos de la ayuda URSSAF."
+    micro_link: "Importes que trasladar y vencimientos de la ayuda URSSAF."
     previous_year: "Año anterior"
     next_year: "Año siguiente"
     paid: "Pagado: %{amount}"
@@ -55,7 +55,7 @@ es:
     actions:
       estimate: "Estimar"
       declare: "Declarar"
-      declare_confirm: "¿Declarar este periodo a la URSSAF? Una vez declarado, sus líneas ya no se modifican: un error se corregirá mediante un asiento de contrapartida, computado en la declaración siguiente."
+      declare_confirm: "¿Declarar este periodo a la URSSAF? Una vez declarado, sus líneas ya no se modifican: un error se corregirá mediante un contraasiento, computado en la declaración siguiente."
       refresh: "Consultar el seguimiento"
       resolve: "Resuelta"
       pay: "Pagar %{amount}"
